@@ -1,0 +1,34 @@
+
+/* heading */
+.heading{
+    margin: 8px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* card */
+.first{
+    margin-top: 30px;
+    margin-left: 7px;
+    align-items: center;
+    justify-content: space-around;
+}
+.card img{
+    border-radius: 5%;
+}
+.card{
+    background-color: black;
+}
+.card-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* bar */
+
+.bar{
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(39, 110, 138);
+}

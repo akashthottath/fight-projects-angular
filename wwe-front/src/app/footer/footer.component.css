@@ -1,0 +1,10 @@
+body {
+    background-color: #f8f9fa;
+  }
+
+  .footer-custom {
+    background-color: #e31837; /* WWE Red */
+    color: #fff; /* White text */
+    padding: 20px 0;
+    text-align: center;
+  }

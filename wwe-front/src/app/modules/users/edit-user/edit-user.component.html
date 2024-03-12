@@ -1,0 +1,80 @@
+  <!-- dashboard -->
+  <div class="dashboard p-3 w-100">
+    <!-- title -->
+    <div class="title">
+      <h1 class="text-light fw-bolder">Edit User Details</h1>
+    </div>
+    <!-- user details -->
+    <div class="user-details mt-5 shadow border rounded p-3">
+
+
+      <form #addUserform="ngForm">
+        <!-- user id -->
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInputId"
+            placeholder="User Id"
+            required
+            pattern="[0-9]*"
+            #id="ngModel"
+            [(ngModel)]="user.id"
+            name="id"
+          />
+          <label for="floatingInputId">User Id</label>
+        </div>
+        <!-- erroe msg for id' -->
+        <div *ngIf="id.invalid&&id.touched" class="mb-3 text-danger">invalid Id</div>
+        <!-- erroe msg for id' -->
+
+        <!-- username -->
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingUsername"
+            placeholder="User Name"
+            required
+            pattern="[a-zA-Z]*"
+            #name="ngModel"
+            [(ngModel)]="user.name"
+            name="name"
+
+          />
+          <label for="floatingUsername">User Name</label>
+        </div>
+        <div *ngIf="id.invalid&&id.touched" class="mb-3 text-danger">invalid username</div>
+                <!-- erroe msg for username' -->
+                
+
+        <!-- email -->
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingemail"
+            placeholder="Email"
+            email
+            required
+            #email="ngModel"
+            [(ngModel)]="user.email"
+            name="email"
+          />
+          <label for="floatingemail">Email</label>
+        </div>
+        <div *ngIf="id.invalid&&id.touched" class="mb-3 text-danger">invalid email</div>
+                        <!-- erroe msg for email' -->
+
+                        
+        <!-- button -->
+        <div class="mt-5 text-center">
+            <button (click)="cancel(user.id)"  class="btn btn-warning" >Cancel</button>
+            <button (click)="edit()" [disabled]="addUserform.invalid"  class="btn btn-success ms-5">Update</button>
+        </div>
+        
+      </form>
+
+      
+    </div>
+  </div>

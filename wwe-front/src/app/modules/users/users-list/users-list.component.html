@@ -1,0 +1,52 @@
+    <!-- dashboard -->
+    <div class="dashboard p-3 w-100">
+
+        <!-- title -->
+        <div class="title d-flex justify-content-between">
+
+            <h1 class="text-light fw-bolder">Ticket-List : </h1>
+
+            <button routerLink="add" class="btn btn-outline-warning"> <i class="fa-solid fa-user-plus"></i> Add </button>
+
+        </div>
+
+        <!-- search -->
+        <div class="d-flex align-items-center m-5 text-danger fw-bold">
+
+            Search: <input type="text"  class="form-control ms-2 w-50" placeholder="Search By UserName">
+
+        </div>
+
+        <!-- table -->
+        <div class="table mt-3 ">
+
+            <table class="table shadow border p-2">
+
+                <thead>
+                    <tr>
+                        <th>User Id</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let user of allusers">
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}} </td>
+                        <td>{{user.email}} </td>
+                        <td>
+                            <!-- edit -->
+                            <a routerLink="edit/{{user.id}}" class="fa-solid fa-pen me-3 text-success btn"></a>
+
+                            <!-- delete -->
+                            <a (click)="deleteUser(user.id)" class="fa-solid fa-trash text-danger btn"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+        
+        
+    </div>
